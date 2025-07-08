@@ -1,7 +1,4 @@
 @import 'tailwindcss';
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 @source "../views";
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -18,12 +15,17 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --color-primary: #5ae4a7;
-  --color-primary-dark: #47c993;
+@layer base {
+  :root {
+    --color-primary: #10b981;
+    --color-primary-dark: #059669;
+  }
+
+  html {
+    font-family: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+  }
 }
 
-/* Create reusable utility classes */
 @layer utilities {
   .bg-primary { background-color: var(--color-primary); }
   .hover\:bg-primary-dark:hover { background-color: var(--color-primary-dark); }
